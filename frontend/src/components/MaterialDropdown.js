@@ -1,7 +1,8 @@
 // src/components/MaterialDropdown.js
 import React, { useState } from 'react';
-import {MenuItem, TextField } from '@mui/material';
+import { MenuItem, TextField } from '@mui/material';
 import PropTypes from 'prop-types';
+import './MaterialDropdown.css'; // Import the CSS file
 
 function MaterialDropdown({ options }) {
     const [selectedOption, setSelectedOption] = useState('');
@@ -13,27 +14,11 @@ function MaterialDropdown({ options }) {
     return (
         <TextField
             select
-            label="Choose an option"
+            label="Recipes"
             value={selectedOption}
             onChange={handleSelectChange}
             variant="outlined"
-            sx={{
-                minWidth: 200,
-                backgroundColor: 'white',
-                marginTop: '20px',
-                '.MuiOutlinedInput-notchedOutline': {
-                    borderColor: 'rgba(0, 0, 0, 0.23)',
-                },
-                '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-                    borderColor: '#61dafb',
-                },
-                '&:hover .MuiOutlinedInput-notchedOutline': {
-                    borderColor: '#21a1f1',
-                },
-                '.MuiSvgIcon-root': {
-                    color: '#61dafb',
-                },
-            }}
+            className="material-dropdown" // Apply the CSS class
         >
             {options.map((option, index) => (
                 <MenuItem key={index} value={option}>
