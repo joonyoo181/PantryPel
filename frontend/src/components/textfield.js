@@ -1,12 +1,12 @@
 import React from 'react';
 import { TextField } from '@mui/material/';
 
-function Textfield() {
+function Textfield(props) {
 
   return (
     <div>
-      <form noValidate autoComplete="off">
-        <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+      <form className='box' noValidate autoComplete="off">
+        <TextField id="outlined-basic" label={props.placeholder} variant="outlined" />
       </form>
     </div>
   );
